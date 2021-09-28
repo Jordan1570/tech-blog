@@ -15,6 +15,17 @@ const PORT = process.env.PORT || 3001;
 
 // const hbs = exphbs.create({})
 
+// Configure and link a session object with the sequelize store
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+};
+
 
 // middleware
 app.use(session(sess));
