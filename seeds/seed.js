@@ -1,27 +1,17 @@
-[
-    {
-      "name": "Tom",
-      "email": "tombrady@gmail.com",
-      "password": "buccaneers"
-    },
-    {
-      "name": "Mac",
-      "email": "macjones@gmail.com",
-      "password": "patriots"
-    },
-    {
-      "name": "Justin",
-      "email": "justinherbert@gmail.com",
-      "password": "chargers"
-    },
-    {
-      "name": "Pat",
-      "email": "patrickmahomes@gmail.com",
-      "password": "chiefs"
-    },
-    {
-      "name": "Lamar",
-      "email": "lamarjackson@gmail.com",
-      "password": "ravens"
-    }
-  ]
+const sequelize = require('../config/connection');
+const { User } = require('../models');
+
+const userData = require('./UserData.json');
+
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
+
+  await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  process.exit(0);
+};
+
+seedDatabase();

@@ -3,17 +3,16 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-// const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
 //creating new sequelie store using express-session
-const sequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// const hbs = exphbs.create({})
+const hbs = exphbs.create({})
 
 // Configure and link a session object with the sequelize store
 const sess = {
@@ -37,9 +36,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+// app.use(routes);
 
-sequelize.syng({ force: false }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now Listening'));
 });
 
