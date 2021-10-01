@@ -1,24 +1,27 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection')
-const bcrypt = require('bcrypt');
 
-class Comment extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Comment extends Model {}
 
 Comment.init(
   {
-    id: { // will reference post id
-    },
-    username: { // will reference the person who commented
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     comment: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    commenter_id: {
+        type:DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id'
+        },
+    },
+    post_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'post',
+            key: 'id'
+        },
     },
   },
   {
