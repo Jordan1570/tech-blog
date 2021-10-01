@@ -1,26 +1,26 @@
 [
     {
-      "name": "Tom",
+      "username": "TomBrady",
       "email": "tombrady@gmail.com",
       "password": "buccaneers"
     },
     {
-      "name": "Mac",
+      "username": "MacJones",
       "email": "macjones@gmail.com",
       "password": "patriots"
     },
     {
-      "name": "Justin",
+      "username": "JustinHerbert",
       "email": "justinherbert@gmail.com",
       "password": "chargers"
     },
     {
-      "name": "Pat",
+      "username": "PatMahomes",
       "email": "patrickmahomes@gmail.com",
       "password": "chiefs"
     },
     {
-      "name": "Lamar",
+      "username": "LamarJackson",
       "email": "lamarjackson@gmail.com",
       "password": "ravens"
     }
