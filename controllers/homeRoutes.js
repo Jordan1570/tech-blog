@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
 
         const posts = postData.map((posts) => posts.get({ plain: true }));
 
-        res.render('homepage', {
+        res.render('all-posts', {
             posts,
         });
     } catch (err) {

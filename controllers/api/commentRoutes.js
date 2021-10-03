@@ -1,13 +1,12 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Comment } = require('../../models');
 
-// CREATE new post
+// Add a comment to a post 
 router.post('/dashboard', async (req, res) => {
   try {
-    const dbPostData = await Post.create({
-      title: req.body.title,
-      content: req.body.content,
-  });
+    const dbCommentData = await Comment.create({
+      comment: req.body.comment,
+    });
 
   } catch (err) {
     console.log(err);
@@ -16,3 +15,4 @@ router.post('/dashboard', async (req, res) => {
 });
 
 module.exports = router;
+
