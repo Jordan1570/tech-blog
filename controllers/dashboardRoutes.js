@@ -1,21 +1,8 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
-
-// CREATE new post
-router.post('/dashboard', async (req, res) => {
-    try {
-        const postData = await Post.create({
-            title: req.body.title,
-            content: req.body.content,
-        });
-        res.status(200).json(postData);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+const { Post } = require('../models');
 
 //GET post by ID
-router.get('post/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
         if (!postData) {
@@ -30,7 +17,7 @@ router.get('post/:id', async (req, res) => {
 });
 
 //UPDATE a post 
-router.put('/:id', async (req, res) => {
+router.put('/post/:id', async (req, res) => {
     try {
         const postData = await Post.update(req.body, {
             where: {
