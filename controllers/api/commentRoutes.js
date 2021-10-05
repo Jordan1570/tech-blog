@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 
 // Add a comment to a post 
-router.post('/dashboard', async (req, res) => {
+router.post('/comment', async (req, res) => {
   try {
     const dbCommentData = await Comment.create({
       comment: req.body.comment,

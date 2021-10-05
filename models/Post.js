@@ -11,10 +11,14 @@ Post.init(
       allowNull: false,
       primaryKey: true,
     },
-    username: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    content: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
