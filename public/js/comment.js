@@ -3,18 +3,18 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
 
     // Gather the data from the form elements on the page
-    const title = document.querySelector('postComment').value.trim();
+    const comment = document.querySelector('postComment').value.trim();
 
-    if (title && content) {
+    if (comment) {
         // Send the title and content to the server
         const response = await fetch('/api/comment/post/:id/', {
             method: 'POST',
-            body: JSON.stringify({ title, content }),
+            body: JSON.stringify({ comment }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
             alert('Error');
         }

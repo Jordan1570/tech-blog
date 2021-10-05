@@ -12,7 +12,7 @@ router.get('/create-post', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        res.render('all-posts')
+        res.render('dashboard')
     } catch (err) {
         res.status(500).json(err);
     }

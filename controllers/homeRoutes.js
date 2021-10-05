@@ -31,13 +31,13 @@ router.get('/signup', async (req, res) => {
     }
 });
 
-router.get('/dashboard', async (req, res) => {
-    try {
-        res.render('dashboard')
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+// router.get('/dashboard', async (req, res) => {
+//     try {
+//         res.render('dashboard')
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 router.get('/logout', async (req, res) => {
     try {

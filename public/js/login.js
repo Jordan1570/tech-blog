@@ -22,6 +22,25 @@ const loginFormHandler = async (event) => {
     }
 };
 
+// grabbing sign up btn in signup hbs
+const signUpBtn = document.getElementById('signUpBtn')
+
+signUpBtn.addEventListener("click", function () {
+
+    if (response.ok) {
+        document.location.replace('/signup');
+    } else {
+        console.log('signing up instead');
+    }
+});
+
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+
+// document
+//     .getElementById('navLogin')
+//     .addEventListener('click', function() {
+//         document.location.replace('/login');
+//     })
+
