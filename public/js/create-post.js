@@ -2,7 +2,7 @@ const PostFormHandler = async (event) => {
     // Stop the browser from submitting the form so we can do so with JavaScript
     event.preventDefault();
 
-    // Gather the data from the form elements on the page
+    // select the elements with the correspsonding ID
     const title = document.querySelector('postTitle').value.trim();
     const content = document.querySelector('postContent').value.trim();
 
