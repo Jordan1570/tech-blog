@@ -6,8 +6,52 @@ nav {
 
 h1 {
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .btn {
     align-items: center;
 }
+
+a {
+    text-align: center;
+}
+
+.post {
+    text-align: center;
+}
+.createPostBtn {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.postTitle {
+    text-align: center;
+}
+
+.postContent {
+    text-align: center;
+}
+
+.card {
+    margin: auto;
+    margin-top: 55px;
+}
+
+.signUpBtn {
+    margin: 0px;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.usernameInput {
+    margin-top: 20px;
+}
+
+.passwordInput {
+    margin-bottom: 20px;
+}
+
