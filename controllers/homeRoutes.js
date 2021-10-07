@@ -39,13 +39,13 @@ router.get('/signup', async (req, res) => {
 //     }
 // });
 
-router.get('/logout', async (req, res) => {
-    try {
-        res.render('login')
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+// router.get('/logout', async (req, res) => {
+//     try {
+//         res.render('login')
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 router.get('/post/:id', (req, res) => {
     try {

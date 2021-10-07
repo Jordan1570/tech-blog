@@ -1,16 +1,9 @@
 const router = require('express').Router();
 const { Post } = require('../models');
+const withAuth = require('../utils/auth');
 
 
-router.get('/create-post', async (req, res) => {
-    try {
-        res.render('create-post')
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         res.render('dashboard')
     } catch (err) {
@@ -18,9 +11,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/login', async (req, res) => {
+router.get('/create-post', async (req, res) => {
     try {
-        res.render('login')
+        res.render('create-post')
     } catch (err) {
         res.status(500).json(err);
     }
@@ -34,7 +27,7 @@ router.get('/single-post', async (req, res) => {
     }
 });
 
-router.get('/edit-post', async (req, res) => {
+router.get('/edit-post/:id', async (req, res) => {
     try {
         res.render('edit-post')
     } catch (err) {
