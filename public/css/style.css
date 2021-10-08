@@ -38,7 +38,11 @@ a {
     margin-top: 55px;
 }
 
-#signUpBtn {
+.signUpInsteadBtn {
+    margin: 0px;
+}
+
+.signUpBtn {
     margin: 0px;
 }
 

@@ -32,6 +32,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" "navLogin" aria-current="page" href="/login">Login</a>
                     </li>
+                    {{#if logged_in}}
+                    <li class="nav-item">
+                        <a class="nav-link active" "navLogin" aria-current="page" href="/">Logout</a>
+                    </li>
+                    {{/if}}
                 </ul>
             </div>
         </nav>

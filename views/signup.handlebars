@@ -1,12 +1,16 @@
-<div class="form-floating mb-3 container col-sm-4">
-    <input type="email" class="form-control" "username-signup" id="floatingInput" placeholder="name@example.com">
+<form id="submit-form">
+  <div class="form-floating mb-3 container col-sm-4">
+    <input class="form-control" id="signUpUsernameInput" placeholder="Username">
     <label for="floatingInput">Username</label>
 </div>
 <div class="form-floating mb-3 container col-sm-4">
-    <input type="password" class="form-control" "password-signup" id="floatingPassword" placeholder="Password">
+    <input type="password" class="form-control" id="signUpPasswordInput" placeholder="Password">
     <label for="floatingPassword">Password</label>
 </div>
 
 <div class="form-group mb-3 container col-sm-4">
-    <button class="btn btn-primary" "signUpBtn" type="submit">Sign Up</button>
+    <button class="btn btn-primary signUpBtn" type="submit">Sign Up</button>
 </div>
+</form>
+
+<script src="/js/signup.js"></script>

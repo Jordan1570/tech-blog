@@ -5,7 +5,16 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        res.render('dashboard')
+
+        const postData = await Post.findAll({
+            
+        });
+
+        const posts = postData.map((posts) => posts.get({ plain: true }));
+
+        res.render('dashboard', {
+            posts,
+        })
     } catch (err) {
         res.status(500).json(err);
     }

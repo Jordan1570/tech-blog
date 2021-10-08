@@ -3,8 +3,8 @@ const PostFormHandler = async (event) => {
     event.preventDefault();
 
     // select the elements with the correspsonding ID
-    const title = document.querySelector('postTitle').value.trim();
-    const content = document.querySelector('postContent').value.trim();
+    const title = document.querySelector('.postTitle').value.trim();
+    const content = document.querySelector('.postContent').value.trim();
 
     if (title && content) {
         // Send the title and content to the server
@@ -23,6 +23,5 @@ const PostFormHandler = async (event) => {
 };
 
 document
-    .querySelector('.postTitle')
-    .querySelector('.postContent')
+    .querySelector('#submit-form')
     .addEventListener('submit', PostFormHandler);

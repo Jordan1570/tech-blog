@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
 
     if (email && password) {
         // Send the e-mail and password to the server
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -21,6 +21,18 @@ const loginFormHandler = async (event) => {
         }
     }
 };
+
+// // grabbing login up btn in login hbs
+// const loginBtn = document.getElementById('loginBtn')
+
+// loginBtn.addEventListener("click", function () {
+
+//     if (response.ok) {
+//         document.location.replace('/dashboard');
+//     } else {
+//         console.log('Logged In Successfully');
+//     }
+// });
 
 // grabbing sign up btn in signup hbs
 const signUpBtn = document.getElementById('signUpBtn')
