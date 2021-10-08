@@ -9,7 +9,9 @@ router.get('/', async (req, res) => {
 
         res.render('all-posts', {
             posts,
+            loggedIn: req.session.loggedIn
         });
+        // res.json(req.session.loggedIn)
     } catch (err) {
         res.status(500).json(err);
     }
